@@ -7,36 +7,35 @@ const jwt = require('jsonwebtoken')
 router.post("/register",function(req,res,next){
   AutenticationControllers.register(req.body)
   .then(()=>{
-    res.redirect("/")
+    res.send("Usuario Creado")
   })
   .catch((e)=>{
-    console.error(e)
-    res.redirect("/500")
+    res.status(400).json({error: "Error Al registar el usuario", message:e.message})
   })
 })
 
 router.post("/login",function(req,res,next){
+  console.log(req.body)
   AutenticationControllers.login(req.body)
   .then((results)=>{
-    res.cookie('jwt',results)
-    res.redirect("/")
+    res.send(results)
   })
   .catch((e)=>{
     console.error(e)
-    res.redirect("/500")
+    res.status(401).json({error: "Error al autenticar", message: e.message})
   })
 })
 
 router.get("/logout",function(req,res,next){
-  AutenticationControllers.logout(req.cookies.jwt)
+  res.send("Logout")
+  /*AutenticationControllers.logout(req.cookies.jwt)
   .then(()=>{
-    res.clearCookie("jwt")
-    res.redirect("/")
+
   })
   .catch((e)=>{
     console.error(e)
     res.redirect("/500")
-  })
+  })*/
 })
 
 router.get("/test", (req, res, next) => {

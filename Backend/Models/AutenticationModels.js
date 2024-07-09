@@ -8,9 +8,11 @@ require('dotenv').config();
 class AutenticationModels{
          register(userData){
         return new Promise(async(resolve,reject)=>{
-            const user = userData.userName
+            console.log(userData)
+            const user = userData.user
             const name = userData.name
             const password = userData.password 
+            console.log(user, name , password)
             let passwordHash = await bcryptjs.hash(password,8)
             let consult = `INSERT INTO users (name,userName,password,id) VALUES ('${name}','${user}','${passwordHash}', "")`
             connection.query(consult,function(error,results,fields){
@@ -25,7 +27,7 @@ class AutenticationModels{
     }
     login(userData){
         return new Promise((resolve,reject)=>{
-            const user = userData.userName
+            const user = userData.user
             const password = userData.password 
             if(!user || !password){
                 reject(new Error("No se pueden pasar valores vacios"))
