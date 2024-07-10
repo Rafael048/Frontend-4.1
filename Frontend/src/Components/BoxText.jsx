@@ -13,7 +13,6 @@ return(
                 <p key={index}>{text} </p>
             )
         })}
-
     </section>
 )
 }
