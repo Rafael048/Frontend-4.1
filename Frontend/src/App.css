@@ -2,3 +2,17 @@
  width: 100vw;
  height: 100vh;
 }
+.Bg-Gray{
+    background-color: rgb(216, 212, 212);
+    width: 50vw;
+    min-height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.Bg-Red{
+    background-color: red;
+}
+.Bg-Blue{
+    background-color: blue;
+}
