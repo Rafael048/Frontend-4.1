@@ -16,3 +16,25 @@
 .Bg-Blue{
     background-color: blue;
 }
+
+.welcome{
+    background: url("./assets/Fondo.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title-Init{
+    width: 50%;
+    padding: 2vw;
+}
+
+.Init{
+    display: flex;
+    width: 80%;
+    height: 90vh;
+    font-size: 80px;
+}
