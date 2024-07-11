@@ -4,6 +4,8 @@ import Button from './Components/Button';
 import FormRegister from './Components/FormRegister';
 import FormLogin from './Components/FormLogin';
 import BoxText from './Components/BoxText';
+import ImageBox from './Components/ImageBox';
+
 function App() {
   
   return (
@@ -25,6 +27,10 @@ function App() {
       "El 19 de junio de 2020, el papa Francisco aprobó el decreto promulgado por la Congregación para la Causa de los Santos, que concede la beatificacion del doctor José Gregorio Hernández."
     ]}
     class = "Bg-Gray"
+  />
+  <ImageBox
+    url = "/logo192.png"
+    alt = "Logo React"
   />
    </div>
     </>
