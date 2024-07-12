@@ -3,9 +3,9 @@ import React from "react";
 function ImageBox(props){
 
     return(
-        <div className={props.class?props.class:"image-box"}>
-            <img src={props.url} alt={props.alt} />
-        </div>
+        <figure className={props.class} >
+        <img src={props.url} alt={props.alt} width={"100%"}/>
+      </figure>
 )
 }
 export default ImageBox
