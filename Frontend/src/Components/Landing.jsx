@@ -15,7 +15,7 @@ export default function Landing() {
        <ImageBox 
             url = {image}
             alt = "Jose"
-            class = "image"
+            class = "image-landing"
             />
 
     </div>

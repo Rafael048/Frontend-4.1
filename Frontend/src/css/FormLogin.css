@@ -1,0 +1,91 @@
+.header{
+    display: flex;
+    flex-direction: row;
+    padding: 2vw;
+    align-items: center;
+    width: 80%;    
+}
+
+.header>h1{
+    color: white;
+    width: 80%;
+    text-align:inherit;
+    font-size: 64px;
+}
+
+.header>a{
+    color: white;
+    width: 20%;
+    text-align: end;
+}
+
+.form{
+    height: 100vh;
+    background: url('../assets/form.png');
+    background-repeat: no-repeat;
+    background-position-y: center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.link-register{
+    color: white;
+    font-size: 26px;
+    text-decoration: none;
+    text-align: center;
+    width: 40%;
+    text-align: center;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 2vw;
+    width: 50%;
+    padding: 2vw;
+    gap: 5vw;
+}
+
+.data{
+    width: 90%;
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+
+}
+
+.input-data{
+    padding: 1vw;
+    background: none;
+    border: 0px;
+    border-bottom: 2px solid white ;
+    width: 80%;
+    font-size: 32px;
+    font-weight: bolder;
+    outline: none;
+    color: white;
+}
+
+.bt-login{
+    width: 80%;
+    padding: 1.5vw;
+    font-size: 32px;
+    font-weight: bolder;
+    border-radius: 50px;
+}
+
+.title-sub{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    padding: 2vw;
+    align-items: start;
+    color: white;
+}
+
+.title-form{
+    width: 40%;
+    text-align: center;
+}

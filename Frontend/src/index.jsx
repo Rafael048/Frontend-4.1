@@ -5,6 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import FormLogin from './Components/FormLogin';
+import History from './pages/History';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -13,6 +14,7 @@ root.render(
       <Routes>
         <Route path="/" exact element={<App/>} />
         <Route path="/FormLogin" element={<FormLogin/>} />
+        <Route path='/History' element={<History/>} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

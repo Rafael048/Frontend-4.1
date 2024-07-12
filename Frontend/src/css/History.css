@@ -1,0 +1,139 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5vw;
+}
+
+.History-description{
+    display: flex;
+    flex-direction: row;
+    width: 85%;
+    gap: 2vw;
+    align-items: center;
+}
+
+.History-description > figure{
+    width: 40%;
+}
+
+.text-history{
+    font-size: 26px;
+    text-align: justify;
+
+}
+
+.text-description{
+    width: 50%;
+}
+
+.title-history{
+    font-size: 110px;
+    font-weight: bold;
+    font-style: normal;
+}
+
+.container-text{
+    width: 60%; 
+}
+
+.container-text>h2{
+    font-size: 55px;
+}
+
+.image-history{
+    width: 100%;
+}
+
+.inf{
+    width: 95%;
+    display: flex;
+    flex-direction: row;
+    gap: 1vw;
+}
+
+.text-his{
+    display: flex;
+    flex-direction: column;
+    gap: 2vw;
+    font-size: 24px;
+    text-align: justify;
+    padding: 2vw;
+    background-color: #D9D9D9;
+}
+
+.text-his > h1{
+    font-size: 46px;
+}
+
+.text-infancia{
+    width: 20%;
+}
+
+.text-educacion{
+    width: 45%;
+
+}
+
+.text-carrera{
+    width: 35%;
+}
+
+.religion-legacy-recognitions{
+    display: flex;
+    flex-direction: column;
+    gap: 2vw;
+    align-items: center;
+}
+
+.religion-legacy{
+    display: flex;
+    flex-direction: row;
+    gap: 2vw;
+}
+
+.text-legacy,.text-religion{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1vw;
+    text-align: justify;
+    font-weight:lighter;
+    padding: 3vw;
+    color: white;
+    font-size: 26px;
+    background-color: #1A1E38;
+}
+
+.text-legacy>h1,.text-religion >h1{
+    font-size: 46px;
+    text-align: center;
+}
+
+.recognitions{
+    display: flex;
+    width: 90%;
+    flex-direction: row;
+    gap: 2vw;
+    align-items: center;
+}
+
+.image-recognitions{
+    width: 50%;
+}
+
+.text-recognitions{
+    font-size: 26px;
+    text-align: justify;
+    width: 50%;
+    display: flex;
+    gap: 3vw;
+    flex-direction: column;
+}
+.text-recognitions>h1{
+    width: 100%;
+    background-color: #D9D9D9;
+    font-size: 46px;
+    text-align: center;
+    padding: 1vw;
+}
