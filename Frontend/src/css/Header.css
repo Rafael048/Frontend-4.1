@@ -1,13 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-
 nav{
-    font-family: "Nunito Sans", sans-serif;
     padding: 1vw;
     width: 100%;
     display: flex;
@@ -47,4 +44,7 @@ ul{
     font-size: 32px;
     align-items: center;
     
+}
+.Comp-Link{
+    text-decoration: none;
 }

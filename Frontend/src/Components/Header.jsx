@@ -3,7 +3,6 @@ import image from '../assets/Logo.png'
 import ImageBox from './ImageBox'
 import Button from './Button'
 import "../css/Header.css"
-import ('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap')
 
 
 export default function Header() {
@@ -20,14 +19,13 @@ export default function Header() {
             <h1>El Médico de los Pobres</h1>
         </div>
         <ul>
-            <li>Historia</li>
-            <li>Hitos en la Medicina</li>
+            <li> <a href="" className='link'>Historia</a></li>
+            <li> <a href="" className='link'>Hitos en la Medicina</a></li>
             <li>
-              
               <Button
-                name = "Iniciar Sesion"
-                class = "button-nav"
-                url = "/Formlogin"
+              url = "/FormLogin"
+              name = "Iniciar Sesion"
+              class = "button-nav Comp-Link"
               />
             </li>
         </ul>
