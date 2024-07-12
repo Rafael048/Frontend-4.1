@@ -1,12 +1,15 @@
 import React from "react";
 import axios from "axios"
 import Cookies from "js-cookie"
-function Prueba(props){
-    async function getUser(e) {
+import {Link} from 'react-router-dom'
+function Button(props){
+    async function linkButton(e) {
         try {
-          const response = await axios.get(e.target.name);
-          console.log(response.data);
-          if(response.data === "Logout"){
+         
+          if(e.target.name === "Logout"){
+            const response = await axios.get(e.target.name);
+            console.log(response.data);
+            if(response.data === "Logout")
             Cookies.remove("jwt")
           }
         } catch (error) {
@@ -16,10 +19,19 @@ function Prueba(props){
       return(
         <>
         <div>
-            <button onClick={(e)=>getUser(e)} name= {props.url}> {props.name} </button>
+        {props.name === "Logout"? (
+          <button onClick={linkButton} name={props.name} className={props.class}>
+            {props.name}
+          </button>
+        ) : (
+          <Link to={props.url} className={props.class}>
+            {props.name}
+          </Link>
+        )}
+
         </div>
         </>
       )
 
 }
-export default Prueba
+export default Button
