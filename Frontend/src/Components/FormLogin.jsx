@@ -40,7 +40,7 @@ function FormLogin(){
                 <button type="submit" className="bt-login">Iniciar Sesión</button>
             </form>
                 <div className="link-register">
-                    <p>¿No estás registrado? <b><a href="/register" className="link-register">Registrarse</a></b></p>
+                    <p>¿No estás registrado? <b><a href="/FormRegister" className="link-register">Registrarse</a></b></p>
                 </div>
         </div>
         <div className="title-sub">

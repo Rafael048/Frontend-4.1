@@ -6,6 +6,10 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import FormLogin from './Components/FormLogin';
 import History from './pages/History';
+import FormRegister from './Components/FormRegister';
+import HitosMedicina from './pages/HitosMedicina';
+import Ubicacion from './pages/Ubicacion';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -14,7 +18,10 @@ root.render(
       <Routes>
         <Route path="/" exact element={<App/>} />
         <Route path="/FormLogin" element={<FormLogin/>} />
+        <Route path='/FormRegister' element={<FormRegister/>} />
         <Route path='/History' element={<History/>} />
+        <Route path='/HitosMedicina' element={<HitosMedicina/>} />
+        <Route path='Ubicacion' element={<Ubicacion/>} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

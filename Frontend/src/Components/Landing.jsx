@@ -5,6 +5,7 @@ import image from '../assets/Jose.png'
 import '../css/landing.css'
 
 export default function Landing() {
+  
   return (
     <div className='description'> 
     <BoxText 

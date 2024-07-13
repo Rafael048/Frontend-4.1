@@ -21,8 +21,8 @@ export default function Header({color,history_page}) {
           
         <ul>
           <li> <a href="History"className={ color ? 'link-header-black' : 'link-header'} class={history_page ? 'Pages': null} >Historia</a></li>
-          <li> <a href="" className={ color ? 'link-header-black' : 'link-header'}>Hitos en la Medicina</a></li>
-          <li><a href="" className={ color ? 'link-header-black' : 'link-header'}>Ubicación</a></li>
+          <li> <a href="HitosMedicina" className={ color ? 'link-header-black' : 'link-header'}>Hitos en la Medicina</a></li>
+          <li><a href="Ubicacion" className={ color ? 'link-header-black' : 'link-header'}>Ubicación</a></li>
           <li>
               <Button
               url = "/FormLogin"
