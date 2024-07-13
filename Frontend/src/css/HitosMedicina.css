@@ -1,3 +1,9 @@
+.hitos-container-main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .hitos-main{
     display: flex;
     flex-direction: column;
@@ -25,4 +31,123 @@
     font-weight: bold;
     text-align: left;
     width: 90%;
+}
+
+.hitos-description{
+    display: flex;
+    flex-direction: row;
+    padding: 2vw;
+    width: 100%;
+    gap: 3vw;
+}
+
+.contain-text-hitos{
+    display: flex;
+    flex-direction: row;
+    gap: 1vw;
+    background-color: #D9D9D9;
+    padding: 1vw;
+}
+
+.text-hitos-description{
+    display: flex;
+    flex-direction: column;
+    gap: 1vw;
+    font-size: 24px;
+    text-align: justify;
+    padding: 1vw;
+}
+
+.text-hitos-description>h1{
+    font-size: 36px;
+}
+
+.description-hitos{
+    display: flex;
+    flex-direction: column;
+    gap: 2vw;
+    width: 80%;
+}
+
+.images-hito{
+    width: 30%;
+}
+
+.studies{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap: 2vw;
+    padding: 2vw;
+    background: url('../assets/bac.png');
+    background-position-x: right;
+    background-repeat: no-repeat;
+    background-size:auto;
+}
+
+.mosquito{
+    display: flex;
+    flex-direction: column;
+    padding: 1vw;
+    background-color: #FEF873;
+    width: 30%;
+    align-items: center;
+}
+
+.pulmon{
+    display: flex;
+    flex-direction: column;
+    padding: 1vw;
+    width: 50%;
+    align-items: center;
+}
+
+.text-studies{
+    display: flex;
+    flex-direction: column;
+    gap: 1vw;
+    font-size: 24px;
+    text-align: justify;
+}
+
+.studies-image{
+    width: 50%;
+}
+
+.img-pulmon{
+    width: 35%;
+}
+
+.title-studies{
+    font-size: 36px;
+    text-align: center;
+}
+
+.more-studies{
+    display: flex;
+    flex-direction: row;
+    gap: 2vw;
+    padding: 2vw;
+}
+
+.more{
+    display: flex;
+    flex-direction: column;
+    gap: 2vw;
+    width: 60%;
+}
+
+.image-medicine{
+    width: 40%;
+}
+.text-more-studies{
+    display: flex;
+    flex-direction: column;
+    gap: 2vw;
+    font-size: 24px;
+    text-align: justify;
+}
+
+.text-more-studies>h1{
+    font-size: 36px;
 }
