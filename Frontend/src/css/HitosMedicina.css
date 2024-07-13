@@ -1,0 +1,28 @@
+.hitos-main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2vw;
+    height: 100vh;
+    background: url('../assets/fondo-hitos.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-weight: lighter;
+}
+
+.text-hitos-main{
+    display: flex;
+    flex-direction: column;
+    gap: 1vw;
+    width: 80%;
+    color: white;
+    font-size: 32px;
+    text-align: justify;
+}
+
+.text-hitos-main>h1{
+    font-size: 105px;
+    font-weight: bold;
+    text-align: left;
+    width: 90%;
+}
