@@ -1,0 +1,66 @@
+.header-register{
+    padding: 1vw;
+}
+
+.register{
+    display: flex;
+    flex-direction: row;
+    background: url('../assets/fondo-register.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    padding: 3vw;
+    gap: 2vw;
+}
+
+.form-register{
+    display: flex;
+    flex-direction: column;
+    gap: 3vw;
+    width: 50%;
+    color: white;
+    align-items: center;
+}
+
+.input-register{
+    padding: 1vw;
+    background: none;
+    border: 0px;
+    width: 60%;
+    border-bottom: 2px solid white ;
+    font-size: 32px;
+    font-weight: bolder;
+    outline: none;
+    color: white;
+}
+
+.bt-register{
+    width: 60%;
+    padding: 1.5vw;
+    font-size: 32px;
+    font-weight: bolder;
+    border-radius: 50px;
+}
+
+.logo-register{
+    width: 50%;
+    display: flex;
+    justify-content: end;
+}
+
+.image-register{
+    width: 80%;
+}
+
+.title-register{
+    width: 100%;
+    text-align: center;
+    font-size: 42px;
+
+}
+
+.home{
+    color: white;
+    text-decoration: none;
+}

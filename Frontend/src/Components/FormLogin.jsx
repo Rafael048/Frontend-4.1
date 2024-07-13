@@ -34,7 +34,7 @@ function FormLogin(){
             </svg></a>
         </div>
         <div className="data">
-            <form onSubmit={(e)=>handleSubmit(e)}>
+            <form onSubmit={(e)=>handleSubmit(e)} className="form-login">
                 <input type="input" placeholder="Usuario" name="user" required className="input-data"></input>
                 <input type="password" placeholder="Contraseña" name="password" required className="input-data"></input>
                 <button type="submit" className="bt-login">Iniciar Sesión</button>

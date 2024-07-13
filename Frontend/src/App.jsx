@@ -1,5 +1,4 @@
 import './App.css';
-//import Mapview from './Components/Mapview';
 import Header from './Components/Header';
 import Landing from './Components/Landing';
 import Footer from './Components/Footer';
@@ -9,7 +8,9 @@ function App() {
     <>
     <div>
       <div className='welcome'>
-        <Header></Header>
+        <Header 
+          
+        ></Header>
         <section className='Init'>
           <div className='title-Init'>
             <h1>Dr. José Gregorio Hernández</h1>
@@ -21,11 +22,7 @@ function App() {
       <Landing></Landing>
     </div>
     <Footer></Footer>
-    {
-      // <Mapview></Mapview>
-    }
-  
-    </>
+      </>
    
   );
 }
