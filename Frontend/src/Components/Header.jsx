@@ -5,12 +5,12 @@ import Button from './Button'
 import "../css/Header.css"
 
 
-export default function Header({color,history_page}) {
+export default function Header({color,history_page,hitos_page,ubi_page}) {
   return (
     <div>
         <header>
       <nav>
-        <div className='logo-title'>
+        <div className={color ? 'logo-title-black': 'logo-title'}>
             <ImageBox 
             url = {image}
             alt = "logo"
@@ -20,9 +20,9 @@ export default function Header({color,history_page}) {
         </div>
           
         <ul>
-          <li> <a href="History"className={ color ? 'link-header-black' : 'link-header'} class={history_page ? 'Pages': null} >Historia</a></li>
-          <li> <a href="HitosMedicina" className={ color ? 'link-header-black' : 'link-header'}>Hitos en la Medicina</a></li>
-          <li><a href="Ubicacion" className={ color ? 'link-header-black' : 'link-header'}>Ubicación</a></li>
+          <li> <a href="History"className={ color ? 'link-header-black' : 'link-header'} class={history_page ? 'Page_histoy': null} >Historia</a></li>
+          <li> <a href="HitosMedicina" className={ color ? 'link-header-black' : 'link-header'} class={hitos_page ? 'Pages':null}>Hitos en la Medicina</a></li>
+          <li><a href="Ubicacion" className={ color ? 'link-header-black' : 'link-header'} class={ubi_page ? 'Pages' : null}>Ubicación</a></li>
           <li>
               <Button
               url = "/FormLogin"

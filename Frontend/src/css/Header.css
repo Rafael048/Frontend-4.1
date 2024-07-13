@@ -75,15 +75,34 @@ ul{
     gap: 1vw;
     font-size: 32px;
     align-items: center;
-    width: 50%;
-    
+    color: white;
+    width: 50%;  
 }
+
+.logo-title-black{
+    display: flex;
+    gap: 1vw;
+    font-size: 32px;
+    align-items: center;
+    color: rgb(0, 0, 0);
+    width: 50%;  
+}
+
+
 .Comp-Link{
     text-decoration: none;
 }
 
-.Pages{ 
+.Page_histoy{ 
     background-color: black;
+    color: white;
+    padding: 0.5vw 1vw;
+    border-radius: 30px;
+    text-decoration: none;
+}
+
+.Pages{ 
+    background-color: rgb(0, 0, 0);
     color: white;
     padding: 0.5vw 1vw;
     border-radius: 30px;
