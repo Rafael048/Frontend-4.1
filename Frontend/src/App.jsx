@@ -22,6 +22,7 @@ function App() {
       <Landing></Landing>
     </div>
     <Footer></Footer>
+    
       </>
    
   );
