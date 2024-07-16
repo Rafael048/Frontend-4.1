@@ -10,6 +10,7 @@ footer{
     align-items: center;
     padding: 1.5vw;
     background-color: black;
+    font-size: 1.5vw;
     color: white;
 }
 
@@ -31,24 +32,29 @@ footer{
     width: 50%;
     gap: 3vw;
     flex: 1;
-    line-height: 2vw;
     align-items: center;
-    font-size: 18px;
+    font-size: 1.4vw;
+}
+
+.git, .names{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5vw;
 }
 
 .git{
-    display: flex;
-    flex-direction: column;
+    gap: 0.8vw;
 }
 
-.link{
+.link-footer{
     color: white;
     text-decoration: none;
     padding: 0.5vw;
+    font-size: 1.5vw;
 
 }
 
-.link:hover{
+.link-footer:hover{
     transition: all .7s ease;
     background-color: rgb(255, 255, 255);
     border-radius: 30px;
@@ -57,11 +63,25 @@ footer{
 }
 
 .icon{
-    line-height: 3vw;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8vw;
 }
 
 .name{
     padding: 0.5vw;
 }
 
+@media (max-width:1024px){
+    .link-footer, .name{
+        font-size: 14px;
+    }
+}
+
+
+@media (max-width:768px){
+    .link-footer,.name{
+        font-size: 12px;
+    }
+}
 

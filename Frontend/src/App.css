@@ -36,7 +36,6 @@ h1{
     color: white;
     display: flex;
     flex-direction: column;
-    align-items: center;
 }
 
 .title-Init{
@@ -47,6 +46,20 @@ h1{
 .Init{
     display: flex;
     width: 80%;
-    height: 90vh;
-    font-size: 80px;
+    margin: 0  auto;
+    font-size: 5vw;
 }
+
+@media (max-width:1024px){
+    .Init{
+        font-size: 5.5vw;
+    }
+}
+
+@media (max-width:650px){
+    .Init{
+        font-size: 6.5vw;
+    }
+}
+
+

@@ -4,27 +4,33 @@
     box-sizing: border-box;
 }
 
+header{
+    width: 100%;
+}
+
 nav{
     padding: 1vw;
     width: 100%;
+    gap: 1vw;
     display: flex;
     align-items: center;
 }
 
 
-ul{
+.menu-links{
     display: flex;
     flex-direction: row;
     gap: 1vw;
     width: 50%;
     list-style: none;
-    font-size: 26px;
+    font-size: 1.6vw;
     align-items: center;
 }
 
 .link-header{
     color: white;
     text-decoration: none;
+    font-weight: bold;
     padding: 0.5vw;
 }
 
@@ -40,6 +46,7 @@ ul{
 .link-header-black{
     color: rgb(0, 0, 0);
     text-decoration: none;
+    font-weight: bold;
     padding: 0.5vw;
 }
 
@@ -53,11 +60,14 @@ ul{
 
 
 .button-nav{
-    font-size: 26px;
+    font-size: 1.5vw;
     background-color: white;
     padding: 10px;
     border-radius: 30px;
     border: 0px;
+    font-weight: bold;
+    color: black;
+
 }
 
 .button-nav:hover{
@@ -70,22 +80,31 @@ ul{
     width: 10%;
 }
 
-.logo-title{
+.title-logo{
     display: flex;
-    gap: 1vw;
-    font-size: 32px;
-    align-items: center;
-    color: white;
+    gap: 2vw;
     width: 50%;  
 }
 
-.logo-title-black{
+.title-header{
     display: flex;
-    gap: 1vw;
-    font-size: 32px;
+    width: 100%;
     align-items: center;
-    color: rgb(0, 0, 0);
-    width: 50%;  
+    font-size: 3vw;
+}
+
+.logo-title-black{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+
+}
+
+.logo-title{
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+
 }
 
 
@@ -99,6 +118,7 @@ ul{
     padding: 0.5vw 1vw;
     border-radius: 30px;
     text-decoration: none;
+    font-weight: bold;
 }
 
 .Pages{ 
@@ -107,4 +127,97 @@ ul{
     padding: 0.5vw 1vw;
     border-radius: 30px;
     text-decoration: none;
+    font-weight: bold;
 }
+
+.active{
+    color: blueviolet;
+}
+
+.desactive{
+    color: antiquewhite;
+}
+
+.close-menu{
+    background: none;
+    color: white;
+    border: 0px;
+    outline: none;
+    padding: 1vw;
+    width: 100%;
+    text-align: start;
+}
+
+.open-menu{
+    background: none;
+    color: white;
+    outline: none;
+    border: 0px;
+}
+
+.open-menu,.close-menu{
+    display: none;
+}
+
+@keyframes link {
+    from {
+        opacity: 0;
+        width: 0;
+    }
+    to {
+        opacity: 1;
+        width: 50%;
+    }
+}
+
+@media (max-width:700px){
+    .open-menu,.close-menu{
+        display: block;
+    }
+
+    .bt-desactive{
+        display: none;
+    }
+
+    nav{
+        justify-content: space-between;
+    }
+
+    .desactive {
+        display: none;
+    }
+    
+    .active{
+        flex-direction: column;
+        background-color: black;
+        gap: 5vw;
+        font-size: 4vw;
+        height: 100vh;
+        right: 0;
+        animation-name: link ;
+        animation-duration: 1s;        
+    }
+
+    .button-nav{
+        font-size: 4vw;
+    }
+
+}
+
+/*@media (max-width:1500px) {
+    .title-header{
+        font-size: 30px;
+    }
+    ul, .button-nav{
+        font-size: 22px;
+    }
+}
+
+@media (max-width:1300px) {
+    .title-header{
+        font-size: 28px;
+    }
+    ul, .button-nav{
+        font-size: 1.5vw;
+    }
+}*/
