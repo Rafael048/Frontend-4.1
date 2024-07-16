@@ -47,7 +47,8 @@ class AutenticationModels{
                         if (comparation) {
                             const id = results[0].id
                             const name = results[0].name
-                            const token = jwt.sign({ id: id,name:name }, process.env.JWT_SECRET);
+                            const userName = results[0].userName
+                            const token = jwt.sign({ id: id, name:name, userName:userName }, process.env.JWT_SECRET);
                             resolve(token)
                         } else {
                             reject(new Error("Contraseña incorrecta"))
@@ -93,6 +94,42 @@ logout(cookie){
         }else{
             resolve()
         }
+    })
+}
+setComments(comments){
+    return new Promise((resolve, reject) => {
+    let comment = comments.comment
+    let token = comments.user
+    let time = new Date()
+    let date = time.toLocaleDateString()
+    const decode = jwt.verify(token, process.env.JWT_SECRET)
+    console.log(decode)
+    let lastComment = {
+        comment: comment,
+        user: decode.userName,
+        date: date
+    }
+    let query = `INSERT INTO comments (comment,user,date) VALUES ('${comment}', '${decode.userName}', '${date}')`
+    connection.query(query, function(error, results){
+        if(error){
+            reject(error)
+        }else{
+            resolve(lastComment)
+        }
+    })
+    })
+    
+}
+getComments(){
+    return new Promise((resolve, reject) => {
+        let query = `SELECT * FROM comments `
+        connection.query(query,function(error,results){
+            if(error){
+                reject(error)
+            }else{
+                resolve(results)
+            }
+        })
     })
 }
 }

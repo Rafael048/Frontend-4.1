@@ -8,6 +8,7 @@ export default function History() {
     const [authenticated, setAuthenticated] = useState(false)
     const [pageContent, setPageContent] = useState(null)
     const [loading, setLoading] = useState(true)
+    
     useEffect(()=>{
         try {
             const token = Cookies.get('jwt')
@@ -39,6 +40,8 @@ export default function History() {
       <div>Cargando...</div>
     ) : authenticated ? (
       pageContent
+      
+      
     ) : (
       <E401 />
     )}

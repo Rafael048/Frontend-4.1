@@ -18,7 +18,6 @@ export default function Landing() {
             alt = "Jose"
             class = "image-landing"
             />
-
     </div>
   )
 }

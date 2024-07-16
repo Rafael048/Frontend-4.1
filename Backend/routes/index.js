@@ -1,7 +1,8 @@
 var express = require('express');
 var router = express.Router();
 const AutenticationControllers = require("../Controllers/AutenticationControllers")
-const jwt = require('jsonwebtoken')
+const jwt = require('jsonwebtoken');
+const e = require('express');
 
 
 router.post("/register",function(req,res,next){
@@ -42,5 +43,25 @@ router.get("/verify/:token", function(req,res,next){
 router.get("/500",(req,res,next)=>{
   res.send("Ha ocurrido un fallo en tu solicitud")
 })
+router.post("/comments",function(req,res,next){
+  let comments = req.body
+  AutenticationControllers.setComments(comments)
+  .then((result) => {
+    res.status(200).json({Comment: "Comentario Agregado", result:result})
+  }).catch((e) => {
+    console.error(e)
+    res.status(500).json({error: "Error al agregar el comentario", message: e.message})
 
+  });
+})
+router.get("/comments",function(req,res,next){
+  AutenticationControllers.getComments()
+  .then((result) => {
+    console.log(result)
+    res.status(200).json({result: "Comentarios Cargados", data: result})
+  }).catch((e) => {
+    res.status(500).json({error: "Error al cargar los comentarios", message: e.message})
+
+  });
+})
 module.exports = router;

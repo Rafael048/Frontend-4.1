@@ -2,6 +2,7 @@ import React from "react";
 import axios from "axios";
 import ImageBox from "./ImageBox";
 import logo_register from '../assets/logo-register.png'
+import Cookies from 'js-cookie'
 import '../css/FormRegister.css'
 
 function FormRegister(){
@@ -13,11 +14,19 @@ function FormRegister(){
             user: e.target.user.value,
             password: e.target.password.value
         }
-        console.log(data)
         await axios.post('http://localhost:8000/register',data)
-       .then((result) => {
-        console.log(result)
-        window.location.href = '/'
+       .then(async() => {
+        await axios.post('http://localhost:8000/login',data)
+        .then((result) => {
+         const token = result.data
+         Cookies.set('jwt', token, { expires: 1 })
+         window.location.href = '/'
+        })
+        .catch((err) => {
+         if(err.response){
+             console.log(err.response.data)
+         }
+     })
        })
        .catch((err) => {
             console.log(err)

@@ -4,6 +4,8 @@ import Footer from '../Components/Footer'
 import image from '../assets/Historia.png'
 import BoxText from '../Components/BoxText'
 import imageDead from '../assets/muerte.png'
+import Comments from '../Components/Comments'
+
 function HistoryContent(){
     const color = 1
     const history_page = 1
@@ -82,7 +84,9 @@ function HistoryContent(){
                                 ></BoxText>
                         </article>
                     </section>
-            
+                    <section>
+                    <Comments/>
+                    </section>
                     </div>
             
                     <Footer></Footer>

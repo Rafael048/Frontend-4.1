@@ -45,6 +45,26 @@ class AutenticationControllers{
                 })
         })
     }
+    setComments(comments){
+        return new Promise((resolve, reject) => {
+            AutenticationModels.setComments(comments)
+            .then((result) => {
+                resolve(result)
+            }).catch((e) => {
+                reject(e)
+            });
+        })
+    }
+    getComments(){
+        return new Promise((resolve, reject) => {
+            AutenticationModels.getComments()
+            .then((result) => {
+                resolve(result)
+            }).catch((e) => {
+                reject(e)
+            });
+        })
+    }
     }
     
   

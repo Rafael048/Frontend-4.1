@@ -14,7 +14,6 @@ function FormLogin(){
         console.log(data)
         await axios.post('http://localhost:8000/login',data)
        .then((result) => {
-        console.log(result)
         const token = result.data
         Cookies.set('jwt', token, { expires: 1 })
         window.location.href = '/'
