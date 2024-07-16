@@ -17,6 +17,7 @@ function FormLogin(){
         console.log(result)
         const token = result.data
         Cookies.set('jwt', token, { expires: 1 })
+        window.location.href = '/'
        })
        .catch((err) => {
         if(err.response){

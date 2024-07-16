@@ -6,11 +6,12 @@ function Button(props){
     async function linkButton(e) {
         try {
          
-          if(e.target.name === "Logout"){
-            const response = await axios.get(e.target.name);
+          if(e.target.name === "Cerrar Sesion"){
+            const response = await axios.get('http://localhost:8000/logout')
             console.log(response.data);
             if(response.data === "Logout")
             Cookies.remove("jwt")
+            window.location.href = "/"
           }
         } catch (error) {
           console.error(error);
@@ -19,7 +20,7 @@ function Button(props){
       return(
         <>
         <div>
-        {props.name === "Logout"? (
+        {props.name === "Cerrar Sesion"? (
           <button onClick={linkButton} name={props.name} className={props.class}>
             {props.name}
           </button>

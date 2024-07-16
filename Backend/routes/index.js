@@ -37,9 +37,15 @@ router.get("/logout",function(req,res,next){
     res.redirect("/500")
   })*/
 })
+router.get("/verify/:token", function(req,res,next){
+  const token = req.params.token
+  AutenticationControllers.verify(token)
+  .then(() => {
+    res.status(200).json({result: "Usuario Autenticado"})
+  }).catch((e) => {
+    res.status(401).json({error: "Error al autenticar", message: e.message})
 
-router.get("/test", (req, res, next) => {
-  res.send("Hola")
+  });
 })
 router.get("/500",(req,res,next)=>{
   res.send("Ha ocurrido un fallo en tu solicitud")
