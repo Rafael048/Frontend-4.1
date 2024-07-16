@@ -1,32 +1,51 @@
 import React from 'react'
-import Header from '../Components/Header'
-import BoxText from '../Components/BoxText'
-import MapView from '../Components/Mapview'
-import Footer from '../Components/Footer'
+import axios from 'axios'
+import UbicacionContent from '../Components/UbicacionContent'
+import E401 from '../Components/E401'
+import { useState, useEffect } from 'react'
+import Cookies from 'js-cookie'
+
 import '../css/Ubicacion.css'
 
 export default function Ubicacion() {
-    const color = 1
-    const ubi_page = 1
-  return (
-    <div className='main'>
-        <Header
-            color={color}
-            ubi_page={ubi_page}
-        ></Header>
-        <div className='main-ubi'>
-          <article className='map-text'>
-            <BoxText
-              title={['Santuario de José Gregorio Hernández']}
-              text={['En su natal Isnotú su santuario oficializado desde 2021 es el Santuario del Niño Jesús, donde además reposan sus restos.']}
-              class='text-ubi'
-            ></BoxText>
-            <div className='map'>
-            <MapView></MapView>
-            </div>
-          </article>
-        </div>
-        <Footer></Footer>
-    </div>
+  const [authenticated, setAuthenticated] = useState(false)
+  const [pageContent, setPageContent] = useState(null)
+  const [loading, setLoading] = useState(true)
+  useEffect(()=>{
+      try {
+          const token = Cookies.get('jwt')
+          if(token===null){
+              setAuthenticated(false)
+              setLoading(false)
+          }else{
+              axios.get(`http://localhost:8000/verify/${token}`)
+              .then(() => {
+                  setAuthenticated(true)
+                   setPageContent(<UbicacionContent/>)
+              setLoading(false)
+              }).catch((err) => {
+                  console.log(err.response.data)
+                   setPageContent(<E401/>) 
+                   setLoading(false)
+              });
+          }
+          
+      } catch (error) {
+          console.error(error)
+          setPageContent(<E401/>) 
+      }
+   
+  },[])
+  return( 
+  <div>
+  {loading ? (
+    <div>Cargando...</div>
+  ) : authenticated ? (
+    pageContent
+  ) : (
+    <E401 />
+  )}
+</div>
   )
+
 }

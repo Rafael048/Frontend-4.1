@@ -28,14 +28,6 @@ router.post("/login",function(req,res,next){
 
 router.get("/logout",function(req,res,next){
   res.send("Logout")
-  /*AutenticationControllers.logout(req.cookies.jwt)
-  .then(()=>{
-
-  })
-  .catch((e)=>{
-    console.error(e)
-    res.redirect("/500")
-  })*/
 })
 router.get("/verify/:token", function(req,res,next){
   const token = req.params.token

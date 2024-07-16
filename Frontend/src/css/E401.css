@@ -6,9 +6,9 @@
     align-items: center;
     height: 80vh;
 }
-b{
+.error{
     color: red
 }
-p{
+.errorP{
     font-size: 32px;
 }

@@ -9,10 +9,10 @@ function E401(){
     },[])
     return(
                 <section className="center">
-                    <p>
-                        <b>Error 401</b>:No estas autorizado para ingresar a esta seccion, por favor inicia sesion para continuar.
+                    <p className="errorP">
+                        <b className="error">Error 401</b>:No estas autorizado para ingresar a esta seccion, por favor inicia sesion para continuar.
                     </p>
-                    <p>
+                    <p className="errorP">
                         Reedirigiendo al inicio de sesion...
                     </p>
                 </section>
