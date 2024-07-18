@@ -55,9 +55,9 @@ class AutenticationControllers{
             });
         })
     }
-    getComments(){
+    getComments(location){
         return new Promise((resolve, reject) => {
-            AutenticationModels.getComments()
+            AutenticationModels.getComments(location)
             .then((result) => {
                 resolve(result)
             }).catch((e) => {

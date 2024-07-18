@@ -102,6 +102,7 @@ setComments(comments){
     let token = comments.user
     let time = new Date()
     let date = time.toLocaleDateString()
+    let location = comments.location
     const decode = jwt.verify(token, process.env.JWT_SECRET)
     console.log(decode)
     let lastComment = {
@@ -109,7 +110,7 @@ setComments(comments){
         user: decode.userName,
         date: date
     }
-    let query = `INSERT INTO comments (comment,user,date) VALUES ('${comment}', '${decode.userName}', '${date}')`
+    let query = `INSERT INTO comments (comment,user,date,location) VALUES ('${comment}', '${decode.userName}', '${date}', '${location}')`
     connection.query(query, function(error, results){
         if(error){
             reject(error)
@@ -120,9 +121,10 @@ setComments(comments){
     })
     
 }
-getComments(){
+getComments(location){
     return new Promise((resolve, reject) => {
-        let query = `SELECT * FROM comments `
+        console.log(location)
+        let query = `SELECT * FROM comments WHERE location = '${location}' `
         connection.query(query,function(error,results){
             if(error){
                 reject(error)

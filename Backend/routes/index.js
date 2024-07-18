@@ -54,8 +54,8 @@ router.post("/comments",function(req,res,next){
 
   });
 })
-router.get("/comments",function(req,res,next){
-  AutenticationControllers.getComments()
+router.get("/comments/:location",function(req,res,next){
+  AutenticationControllers.getComments(req.params.location)
   .then((result) => {
     console.log(result)
     res.status(200).json({result: "Comentarios Cargados", data: result})
