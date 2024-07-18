@@ -86,7 +86,12 @@ function HistoryContent(){
                     </section>
                     
                     </div>
+                    
+                    </div>
                     <section>
+                    <Comments
+                        location = "History"
+                    />
                     <Comments
                         location = "History"
                     />

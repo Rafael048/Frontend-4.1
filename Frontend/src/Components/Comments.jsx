@@ -6,6 +6,7 @@ function Comments(props){
     const [comments, setComments] = useState([{}]);
     async function getComments(){
         await axios.get(`http://localhost:8000/comments/${props.location}`)
+        await axios.get(`http://localhost:8000/comments/${props.location}`)
         .then((comment) => {
             handleComments(comment.data)
         }).catch((err) => {
@@ -31,6 +32,21 @@ function Comments(props){
             setComments([])
         }
         
+        if(data.length>0){
+            data.map((comment,index)=>{
+                let data =     {
+                        comment : comment.comment,
+                        user : comment.user,
+                        date : comment.date,
+                        index : index
+                    }
+                setComments((prevComments)=>[...prevComments, data])
+                return 
+            })
+        }else{
+            setComments([])
+        }
+        
     }
    async function formSubmit(e){
          e.preventDefault()
@@ -38,6 +54,8 @@ function Comments(props){
         let token = Cookies.get('jwt')
         let req = {
             comment: comment,
+            user: token,
+            location : props.location
             user: token,
             location : props.location
         }
@@ -48,6 +66,7 @@ function Comments(props){
 
     }).catch((err) => {
         if(err.response){
+            console.error(err.response.data)
             console.error(err.response.data)
         }
        });
@@ -62,6 +81,7 @@ function Comments(props){
                 <input type="text" placeholder="Escribe tu comentario" name="comment" />
                 <button type="submit">Enviar</button>
             </form>
+            {comments.length>0 ?(
             {comments.length>0 ?(
                 <div className="comments">
                     <h2>Comentarios</h2>
