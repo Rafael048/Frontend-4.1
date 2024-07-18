@@ -86,12 +86,7 @@ function HistoryContent(){
                     </section>
                     
                     </div>
-                    
-                    </div>
                     <section>
-                    <Comments
-                        location = "History"
-                    />
                     <Comments
                         location = "History"
                     />
@@ -101,4 +96,5 @@ function HistoryContent(){
                 </div>
     )
 }
+
 export default HistoryContent

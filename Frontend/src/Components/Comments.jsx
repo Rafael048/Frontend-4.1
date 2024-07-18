@@ -6,7 +6,6 @@ function Comments(props){
     const [comments, setComments] = useState([{}]);
     async function getComments(){
         await axios.get(`http://localhost:8000/comments/${props.location}`)
-        await axios.get(`http://localhost:8000/comments/${props.location}`)
         .then((comment) => {
             handleComments(comment.data)
         }).catch((err) => {
@@ -26,7 +25,7 @@ function Comments(props){
                         index : index
                     }
                 setComments((prevComments)=>[...prevComments, data])
-                return 
+                return 1
             })
         }else{
             setComments([])
@@ -41,7 +40,7 @@ function Comments(props){
                         index : index
                     }
                 setComments((prevComments)=>[...prevComments, data])
-                return 
+                return 1
             })
         }else{
             setComments([])
@@ -56,8 +55,6 @@ function Comments(props){
             comment: comment,
             user: token,
             location : props.location
-            user: token,
-            location : props.location
         }
         await axios.post('http://localhost:8000/comments', req)
        .then((result) => {
@@ -66,7 +63,6 @@ function Comments(props){
 
     }).catch((err) => {
         if(err.response){
-            console.error(err.response.data)
             console.error(err.response.data)
         }
        });
@@ -81,7 +77,6 @@ function Comments(props){
                 <input type="text" placeholder="Escribe tu comentario" name="comment" />
                 <button type="submit">Enviar</button>
             </form>
-            {comments.length>0 ?(
             {comments.length>0 ?(
                 <div className="comments">
                     <h2>Comentarios</h2>
@@ -103,5 +98,6 @@ function Comments(props){
 
         </div>
     )
+
 }
 export default Comments

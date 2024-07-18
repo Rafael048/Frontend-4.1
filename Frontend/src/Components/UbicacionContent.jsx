@@ -4,7 +4,6 @@ import BoxText from '../Components/BoxText'
 import MapView from '../Components/Mapview'
 import Footer from '../Components/Footer'
 import Comments from './Comments'
-import Comments from './Comments'
 
 function UbicacionContent(){
     const color = 1
@@ -27,9 +26,6 @@ function UbicacionContent(){
             </div>
           </article>
         </div>
-        <Comments
-            location = "Map"
-        />
         <Comments
             location = "Map"
         />
