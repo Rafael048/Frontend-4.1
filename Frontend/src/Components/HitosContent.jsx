@@ -9,6 +9,7 @@ import mosquito from '../assets/mosquito.png'
 import pulmon from '../assets/pulmon.png'
 import medicine from '../assets/medicina.png'
 import Footer from '../Components/Footer'
+import Comments from "./Comments";
 function HitosContent(){
     const color = null
     const hitos_page = 1
@@ -115,7 +116,9 @@ function HitosContent(){
             ></ImageBox>
         </section>
     </div>
-
+        <Comments
+            location = "Hitos"
+        />
         <Footer></Footer>
     </div>
     )

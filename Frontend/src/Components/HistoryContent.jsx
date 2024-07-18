@@ -84,11 +84,13 @@ function HistoryContent(){
                                 ></BoxText>
                         </article>
                     </section>
-                    <section>
-                    <Comments/>
-                    </section>
+                    
                     </div>
-            
+                    <section>
+                    <Comments
+                        location = "History"
+                    />
+                    </section>
                     <Footer></Footer>
                   
                 </div>
