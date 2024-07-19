@@ -10,17 +10,22 @@ import pulmon from '../assets/pulmon.png'
 import medicine from '../assets/medicina.png'
 import Footer from '../Components/Footer'
 import Comments from "./Comments"
+import '../css/HitosMedicina.css'
+
+
 function HitosContent(){
     const color = null
     const hitos_page = 1
     return(
         <div>
-        <div className='hitos-container-main'>
+            
         <section className='hitos-main'>
+        <div className="header-hitos">
         <Header 
             hitos_page={hitos_page}
             color={color}
         ></Header>
+        </div>
         <Boxtext
             title={['Padre de la Bacteriología y Medicina Experimental']}
             text={['Hernández es considerado el fundador de la bacteriología en Venezuela, área a la que dedicó especial atención durante su ejercicio profesional, debido a la realidad sanitaria del país con enfermedades como la tuberculosis y fiebre tifoidea. ']}
@@ -115,7 +120,6 @@ function HitosContent(){
                 class="image-medicine"
             ></ImageBox>
         </section>
-    </div>
         <Comments
             location = "Hitos"
         />

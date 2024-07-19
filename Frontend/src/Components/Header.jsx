@@ -10,6 +10,7 @@ export default function Header({color,history_page,hitos_page,ubi_page}) {
   const [open, setOpen] = useState(false)
   const [buttonOpen, setButtonOpen] = useState(true)
   const [buttonUser, setButtonUser] = useState(false)
+  const [title, setTitle] = useState(true)
   useEffect(()=>{
     const token = Cookies.get('jwt')
     if(token){
@@ -32,18 +33,20 @@ export default function Header({color,history_page,hitos_page,ubi_page}) {
   function bt_open() {
     setOpen(true)
     setButtonOpen(false)
+    setTitle(false)
   }
 
   function bt_close() {
     setOpen(false)
     setButtonOpen(true)
+    setTitle(true)
   }
 
   return (
     <div>
         <header>
       <nav>
-        <div className='title-logo'>
+        <div className={`${title ? 'title-logo' : 'title-desactive'}`}>
             <ImageBox 
             url = {image}
             alt = "logo"
@@ -51,7 +54,7 @@ export default function Header({color,history_page,hitos_page,ubi_page}) {
             />
             <h1 className='title-header'><a href="/" className={color ? 'logo-title-black': 'logo-title'}>El Médico de los Pobres</a></h1>
         </div>
-        <button className={`${buttonOpen ? 'open-menu' : 'bt-desactive'}`} onClick={bt_open}>
+        <button className={`${buttonOpen ? 'open-menu' : 'bt-desactive'} ${color ? 'button-black': 'button-white'}`} onClick={bt_open}>
         <svg xmlns="http://www.w3.org/2000/svg" width="6vw" fill="currentColor" className="bi bi-list" viewBox="0 0 16 16">
           <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
         </svg>          

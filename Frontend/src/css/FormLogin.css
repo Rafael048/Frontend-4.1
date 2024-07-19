@@ -24,6 +24,7 @@
     background: url('../assets/form.png');
     background-repeat: no-repeat;
     background-position-y: center;
+    background-position-x: center;
     background-size: cover;
     display: flex;
     flex-direction: column;
@@ -35,17 +36,17 @@
     font-size: 26px;
     text-decoration: none;
     text-align: center;
-    width: 40%;
-    text-align: center;
+    width: 100%;
+    text-align: left;
 }
 
 .form-login{
     display: flex;
     flex-direction: column;
     gap: 2vw;
+    justify-content: space-between;
     width: 50%;
     padding: 2vw;
-    gap: 5vw;
 }
 
 .data{
@@ -86,6 +87,66 @@
 }
 
 .title-form{
-    width: 40%;
-    text-align: center;
+    width: 100%;
+    text-align: left;
+}
+
+@media (max-width:768px){
+    .input-data{
+        font-size: 30px;
+        width: 100%;
+    }
+    .bt-login{
+        width: 100%;
+        font-size: 30px;
+    }
+    .header{
+        width: 100%;
+    }
+    .form-login{
+        gap: 4vw;
+    }
+
+    .link-register{
+        font-size: 20px;
+        width: 50%;
+    }
+    .form{
+        align-items: flex-end;
+        justify-content: space-around;
+    }
+    .title-form{
+        font-size: 25px;
+    }
+}
+
+@media (max-width:640px){
+    .header>h1{
+        font-size: 40px;
+    }
+    .input-data{
+        font-size: 24px;
+        width: 100%;
+    }
+    .bt-login{
+        width: 100%;
+        font-size: 24px;
+    }
+    .data{
+        width: 100%;
+        align-items: center;
+    }
+    .form-login{
+        gap: 10vw;
+        width: 70%;
+    }
+    .link-register{
+        font-size: 20px;
+        text-align: center;
+        width: 100%;
+    }
+    .form{
+        background: black
+
+    }
 }

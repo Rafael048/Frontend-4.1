@@ -1,9 +1,17 @@
-.main{
+/*.main{
     background: url('../assets/maps.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-}
+}*/
+
+
+.leaflet-container{
+    width: 100%;
+    height: 400px;
+    border-radius: 30px;
+    border: 2px solid green;
+   }
 
 .main-ubi{
     display: flex;
@@ -14,7 +22,7 @@
 .map-text{
     display: flex;
     flex-direction: row;
-    width: 80%;
+    width: 100%;
     gap: 3vw;
     align-items: center;
 }
@@ -25,10 +33,50 @@
 
 .text-ubi{
     width: 50%;
-    font-size: 26px;
+    font-size: 1.7vw;
     text-align: justify;
 }
 .text-ubi>h1{
     text-align: left;
-    font-size: 92px;
+    font-size: 5.2vw;
+}
+
+@media(max-width:768px){
+    .map-text{
+        flex-direction: column;
+        width: 100%;
+    }
+    .text-ubi{
+        font-size: 14px;
+    }
+    .text-ubi>h1{
+        font-size: 50px;
+    }
+    .text-ubi,.map{
+        width: 80%        
+    }
+}
+
+@media(max-width:768px){
+    .text-ubi{
+        font-size: 14px;
+    }
+    .text-ubi>h1{
+        font-size: 40px;
+    }
+
+}
+
+
+@media(max-width:450px){
+    .text-ubi{
+        font-size: 14px;
+    }
+    .text-ubi>h1{
+        font-size: 35px;
+    }
+    .leaflet-container{
+        height: 300px;
+        width: 300px;
+    }
 }

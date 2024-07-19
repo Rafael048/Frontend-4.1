@@ -148,9 +148,16 @@ nav{
     text-align: start;
 }
 
+.button-black{
+    color: black;
+}
+
+.button-white{
+    color: white;
+}
+
 .open-menu{
     background: none;
-    color: white;
     outline: none;
     border: 0px;
 }
@@ -167,8 +174,12 @@ nav{
     }
     to {
         opacity: 1;
-        width: 50%;
+        width: 100%;
     }
+}
+
+.title-desactive{
+    display: none;
 }
 
 @media (max-width:700px){
@@ -187,9 +198,21 @@ nav{
     .desactive {
         display: none;
     }
-    
+    .link-header-black,.link-header{
+        color: white;
+    }
+
+    .Page_histoy{
+        color: black;
+        background-color: white;
+    }
+    .Pages{
+        color: black;
+        background-color: white;
+    }
     .active{
         flex-direction: column;
+        width: 100%;
         background-color: black;
         gap: 5vw;
         font-size: 4vw;
