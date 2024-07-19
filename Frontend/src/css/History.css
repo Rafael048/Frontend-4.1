@@ -137,3 +137,62 @@
     text-align: center;
     padding: 1vw;
 }
+@media (max-width:768px) {
+    .title-history{
+        font-size: 60px;
+    }
+    .text-recognitions>h1{
+        font-size: 35px;
+    }
+    .text-infancia,.text-educacion,.text-carrera,.text-legacy,.text-religion{
+        font-size: 18px;
+    }
+    .text-infancia>h1,.text-educacion>h1,.text-carrera>h1{
+        font-size: 30px;
+    }
+}
+@media(max-width:450px) {
+    .container{
+        width: 100vw;
+    }
+    .History-description{
+        width: 100%;
+        flex-direction: column;
+    }
+    .container-text{
+        width: 100%;
+    }
+    .inf,.religion-legacy{
+        flex-direction: column;
+    }
+    .title-history{
+        font-size: 50px;
+    }
+    .text-recognitions{
+        width: 100%;
+    }
+    .text-recognitions>h1{
+        font-size: 35px;
+    }
+    .text-religion>h1,.text-legacy>h1{
+        font-size: 35px;
+    }
+    .text-infancia,.text-educacion,.text-carrera,.text-legacy,.text-religion{
+        width: 100%;
+        font-size: 18px;
+    }
+    .text-recognitions>p{
+        font-size: 20px;
+    }
+    .History-description>figure>img{
+        height: 200px;
+        width: 200px;
+    }
+    .History-description>figure{
+        height: 200px;
+        width: 200px;
+    }
+    .recognitions{
+        flex-direction: column-reverse;
+    }
+}

@@ -2,12 +2,12 @@ import React from "react";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import Cookies from 'js-cookie'
+import "../css/Comments.css"
 function Comments(props){
     const [comments, setComments] = useState([{}]);
     async function getComments(){
-        await axios.get('http://localhost:8000/comments')
+        await axios.get(`http://localhost:8000/comments/${props.location}`)
         .then((comment) => {
-            console.log(comment.data) 
             handleComments(comment.data)
         }).catch((err) => {
             if(err.response){
@@ -17,16 +17,21 @@ function Comments(props){
     }
     function handleComments(result){
         let data = result.data
-        data.map((comment,index)=>{
-            let data =     {
-                    comment : comment.comment,
-                    user : comment.user,
-                    date : comment.date,
-                    index : index
-                }
-            setComments((prevComments)=>[...prevComments, data])
-            return 1
-        })
+        if(data.length>0){
+            data.map((comment,index)=>{
+                let data =     {
+                        comment : comment.comment,
+                        user : comment.user,
+                        date : comment.date,
+                        index : index
+                    }
+                setComments((prevComments)=>[...prevComments, data])
+                return 1
+            })
+        }else{
+            setComments([])
+        }
+        
     }
    async function formSubmit(e){
          e.preventDefault()
@@ -34,7 +39,8 @@ function Comments(props){
         let token = Cookies.get('jwt')
         let req = {
             comment: comment,
-            user: token
+            user: token,
+            location : props.location
         }
         await axios.post('http://localhost:8000/comments', req)
        .then((result) => {
@@ -43,7 +49,7 @@ function Comments(props){
 
     }).catch((err) => {
         if(err.response){
-            console.log(err.response.data)
+            console.error(err.response.data)
         }
        });
    }
@@ -51,32 +57,35 @@ function Comments(props){
     getComments()
 },[])
     return(
-        <div>
-            
+        <>
+        <div className="comments">
+            <h2>Comentarios</h2>
+
             <form onSubmit={(e)=>formSubmit(e)} id="form"    >
-                <input type="text" placeholder="Escribe tu comentario" name="comment" />
+                <input type="text" placeholder="Escribe tu comentario" name="comment" className="comments-input"  autoComplete="off" required/>
                 <button type="submit">Enviar</button>
             </form>
-            {comments.length>0?(
-                <div className="comments">
-                    <h2>Comentarios</h2>
+            {comments.length>0 ?(
+                <div >
                     {comments.map((comments)=>{
                         return(
-                            <div key={comments.index}>
-                                <p>{comments.date}</p>
+                            <div key={comments.index} className="comments-child">
+                                <div className="comments-user">
                                 <p> {comments.user} </p>
-                                <p>{comments.comment}</p>
+                                <p>{comments.date}</p>
+                                </div>
+                                <p className="comment">{comments.comment}</p>
                             </div>
                         )
                     })}
                 </div>
             ):(
-                <div className="Empty">
-                    <p>Aun no hay comentarios</p>
-                </div>
+                    <h2>Aun no hay comentarios</h2>
             )}
 
         </div>
+        </>
     )
+
 }
 export default Comments

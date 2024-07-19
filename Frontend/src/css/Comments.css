@@ -1,0 +1,28 @@
+.comments{
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    gap: 1vw;
+    padding-left: 0.4vw;
+}
+.comments-child{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 0.2vw;
+}
+.comments-user{
+    display: flex;
+    width: 20%;
+    gap: 0.5vw;
+}
+.comments-input{
+    width: 85%;
+    border: none;
+    text-align:left;
+    font-size: 18px;
+}
+.comments-input:focus{
+    outline:none ;
+    border-bottom:1px solid black ;
+}
