@@ -2,7 +2,6 @@ import React from 'react'
 import HitosContent from '../Components/HitosContent'
 import E401 from '../Components/E401'
 import { useState, useEffect } from 'react'
-import '../css/HitosMedicina.css'
 import axios from 'axios'
 import Cookies from 'js-cookie'
 

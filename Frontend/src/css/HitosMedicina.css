@@ -9,11 +9,11 @@
     flex-direction: column;
     align-items: center;
     gap: 2vw;
-    height: 100vh;
     background: url('../assets/fondo-hitos.png');
     background-repeat: no-repeat;
     background-size: cover;
     font-weight: lighter;
+    padding-bottom: 2vw;
 }
 
 .text-hitos-main{
@@ -22,12 +22,12 @@
     gap: 1vw;
     width: 80%;
     color: white;
-    font-size: 32px;
+    font-size: 1.7vw;
     text-align: justify;
 }
 
 .text-hitos-main>h1{
-    font-size: 105px;
+    font-size: 6.58vw;
     font-weight: bold;
     text-align: left;
     width: 90%;
@@ -47,19 +47,32 @@
     gap: 1vw;
     background-color: #D9D9D9;
     padding: 1vw;
+    width: 70%;
 }
 
 .text-hitos-description{
     display: flex;
     flex-direction: column;
     gap: 1vw;
-    font-size: 24px;
+    font-size: 1.5vw;
     text-align: justify;
     padding: 1vw;
+    width: 30%;   
+}
+
+
+.text-hitos{
+    display: flex;
+    flex-direction: column;
+    gap: 1vw;
+    font-size: 1.5vw;
+    text-align: justify;
+    padding: 1vw; 
+    width: 90%;   
 }
 
 .text-hitos-description>h1{
-    font-size: 36px;
+    font-size: 2.6vw;
 }
 
 .description-hitos{
@@ -70,19 +83,25 @@
 }
 
 .images-hito{
-    width: 30%;
+    display: flex;
+    flex-direction: column;
+    gap: 2vw;
+    
+    justify-content: center;
+
+}
+
+.images-hito{
+    width: 40%;
 }
 
 .studies{
     display: flex;
     flex-direction: row;
     width: 100%;
+    justify-content: center;
     gap: 2vw;
     padding: 2vw;
-    background: url('../assets/bac.png');
-    background-position-x: right;
-    background-repeat: no-repeat;
-    background-size:auto;
 }
 
 .mosquito{
@@ -90,7 +109,7 @@
     flex-direction: column;
     padding: 1vw;
     background-color: #FEF873;
-    width: 30%;
+    width: 40%;
     align-items: center;
 }
 
@@ -106,7 +125,7 @@
     display: flex;
     flex-direction: column;
     gap: 1vw;
-    font-size: 24px;
+    font-size: 1.8vw;
     text-align: justify;
 }
 
@@ -119,7 +138,7 @@
 }
 
 .title-studies{
-    font-size: 36px;
+    font-size: 2.5vw;
     text-align: center;
 }
 
@@ -128,6 +147,8 @@
     flex-direction: row;
     gap: 2vw;
     padding: 2vw;
+    align-items: center;
+    background-color: #D9D9D9;
 }
 
 .more{
@@ -144,10 +165,80 @@
     display: flex;
     flex-direction: column;
     gap: 2vw;
-    font-size: 24px;
+    font-size: 1.8vw;
     text-align: justify;
 }
 
 .text-more-studies>h1{
-    font-size: 36px;
+    font-size: 2.7vw;
+}
+
+@media (max-width:1024px){
+    .text-hitos, 
+    .text-hitos-description, 
+    .text-more-studies, 
+    .text-studies, 
+    .text-hitos-main{
+        font-size: 16px;
+    }
+    .text-hitos-description{
+        width: 50%;
+    }
+}
+
+@media (max-width:650px){
+    .hitos-description{
+        flex-direction: column;
+    }
+
+    .text-hitos-description,
+    .contain-text-hitos,
+    .text-hitos,
+    .description-hitos,
+    .images-hito,
+    .more{
+        width: 100%;
+    }
+    .text-hitos>h1, .title-studies{
+        text-align: center;
+        font-size: 26px;
+    }
+
+    .text-more-studies>h1{
+        font-size: 26px;
+    }
+    .contain-text-hitos{
+        flex-direction: column;
+    }
+    .images-hito{
+        flex-direction: row;
+    }
+    .studies{
+        padding: 0vw;
+        flex-direction: column;
+    }
+    .mosquito, .pulmon{
+        width: 100%;
+        padding: 2vw;
+    }
+
+    .more-studies{
+        flex-direction: column;
+    }
+}
+
+@media (max-width:425px){
+    .text-hitos, 
+    .text-hitos-description, 
+    .text-more-studies, 
+    .text-studies, 
+    .text-hitos-main{
+        font-size: 14px;
+    }
+    .text-hitos>h1, .title-studies,
+    .text-more-studies>h1{
+        font-size: 22px;
+    }
+
+
 }

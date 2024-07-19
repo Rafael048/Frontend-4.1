@@ -9,12 +9,14 @@ import mosquito from '../assets/mosquito.png'
 import pulmon from '../assets/pulmon.png'
 import medicine from '../assets/medicina.png'
 import Footer from '../Components/Footer'
+import '../css/HitosMedicina.css'
+
 function HitosContent(){
     const color = null
     const hitos_page = 1
     return(
         <div>
-            <div className='hitos-container-main'>
+        <div className='hitos-container-main'>
         <section className='hitos-main'>
         <Header 
             hitos_page={hitos_page}
@@ -38,13 +40,13 @@ function HitosContent(){
                 <Boxtext
                     title={['Estudios sobre Angina de Pecho']}
                     text={['Junto a Nicanor Guardia, el Dr. José Gregorio Hernández escribió para un estudio dedicado a la Facultad de Medicina de Madrid sobre la angina de pecho de naturaleza paludosa. En este trabajo científico, publicado en la Gaceta Médica de Caracas de 1894, destacó la observación de tres casos, que le sirvieron de base para estudiar con más detalle esta enfermedad poco conocida y mal estudiada para ese momento.']}
-                    class='text-hitos-description'
+                    class='text-hitos'
                 ></Boxtext>
 
                 <Boxtext
                     title={['Libro de Bacteriología']}
                     text={['En 1906, el médico de los pobres publicó una de sus obras más importantes: Elementos de Bacteriología, primer texto de esa especialidad editado en el país y en el que a lo largo de sus 194 páginas presentó las definiciones de bacteriología, los microbios, microbios vegetales, animales, sus formas, coccus, bacilos, spirilos, clasificación de Pasteur, entre otros. Este libro fue referencia durante muchos años en la cátedra de Bacteriología de la UCV.']}
-                    class='text-hitos-description'
+                    class='text-hitos'
                 ></Boxtext>
                 </div>
                 <div className='images-hito'>
