@@ -11,10 +11,11 @@ function HistoryContent(){
     const history_page = 1
     return(
         <div>
-                    <Header class="header-history" 
-                        color={color}
-                        history_page={history_page}
-                    ></Header>
+            <Header class="header-history" 
+                    color={color}
+                    history_page={history_page}
+            >
+             </Header>
             
                     <div className='container'>
                     <section className='History-description'>

@@ -2,9 +2,9 @@ import React from "react";
 import axios from "axios";
 import Cookies from "js-cookie"
 import '../css/FormLogin.css'
-
+import { useState } from "react";
 function FormLogin(){
-
+let [error,setError] = useState(null)
     async function handleSubmit(e){
         e.preventDefault();
         const data = {
@@ -20,7 +20,8 @@ function FormLogin(){
        })
        .catch((err) => {
         if(err.response){
-            console.log(err.response.data)
+            console.log(err.response.data.message)
+            setError(err.response.data.message)
         }
     })
     }
@@ -37,7 +38,12 @@ function FormLogin(){
             <form onSubmit={(e)=>handleSubmit(e)} className="form-login">
                 <input type="input" placeholder="Usuario" name="user" required className="input-data"></input>
                 <input type="password" placeholder="Contraseña" name="password" required className="input-data"></input>
-                <button type="submit" className="bt-login">Iniciar Sesión</button>
+            {error?(
+                <div className="error">{error}</div>
+            ):(
+                <></>
+            )}
+            <button type="submit" className="bt-login">Iniciar Sesión</button>
             </form>
                 <div className="link-register">
                     <p>¿No estás registrado? <b><a href="/FormRegister" className="link-register">Registrarse</a></b></p>
