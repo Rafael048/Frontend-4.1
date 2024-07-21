@@ -26,8 +26,8 @@ class AutenticationControllers{
     verify(cookie){
         return new Promise((resolve, reject) => {
             AutenticationModels.verify(cookie)
-                .then(() => {
-                    resolve()
+                .then((userName) => {
+                    resolve(userName)
                 })
                 .catch((error) => {
                     reject(error)

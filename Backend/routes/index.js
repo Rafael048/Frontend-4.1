@@ -33,8 +33,8 @@ router.get("/logout",function(req,res,next){
 router.get("/verify/:token", function(req,res,next){
   const token = req.params.token
   AutenticationControllers.verify(token)
-  .then(() => {
-    res.status(200).json({result: "Usuario Autenticado"})
+  .then((userName) => {
+    res.status(200).json({result: "Usuario Autenticado",userName:userName})
   }).catch((e) => {
     res.status(401).json({error: "Error al autenticar", message: e.message})
 

@@ -74,7 +74,7 @@ class AutenticationModels{
                         if (!results || results.length === 0) {
                             reject(new Error("Usuario no encontrado"))
                         } else {
-                            resolve()
+                            resolve(results[0].userName)
                         }
                     }
                 });
