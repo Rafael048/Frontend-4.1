@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 19-07-2024 a las 01:12:09
+-- Tiempo de generación: 21-07-2024 a las 20:42:58
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -28,7 +28,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `comments` (
-  `comment` varchar(150) NOT NULL,
+  `comment` longtext NOT NULL,
   `user` varchar(20) NOT NULL,
   `date` varchar(20) NOT NULL,
   `location` varchar(20) NOT NULL,
