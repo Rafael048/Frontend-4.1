@@ -77,7 +77,7 @@
 .svg-cont{
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: start;
 }
 .user-date>h1{
     font-size: 16px;
