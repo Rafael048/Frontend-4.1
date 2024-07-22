@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import ImageBox from "./ImageBox";
 import logo_register from '../assets/logo-register.png'
@@ -7,6 +7,7 @@ import '../css/FormRegister.css'
 
 function FormRegister(){
 
+    const [error, setError] = useState(null)
     async function handleSubmit(e){
         e.preventDefault();
         const data = {
@@ -24,13 +25,14 @@ function FormRegister(){
         })
         .catch((err) => {
          if(err.response){
-             console.log(err.response.data)
+             console.log(err.response.data.error)
          }
      })
        })
        .catch((err) => {
-            console.log(err)
-       })
+        console.log(err.response.data.error)
+        setError(err.response.data.error) 
+    })
     }
 
     return(
@@ -56,6 +58,10 @@ function FormRegister(){
                     <input type="input" placeholder="Nombre" name="name" required className="input-register"></input>
                     <input type="input" placeholder="Usuario" name="user" required className="input-register"></input>
                     <input type="password" placeholder="Contraseña" name="password" required className="input-register"></input>
+                    {
+                        error ?<div className="error">{error}</div>
+                        : <></>
+                    }
                     <button type="submit" className="bt-register">Registrarse</button>
                 </form>
                 
