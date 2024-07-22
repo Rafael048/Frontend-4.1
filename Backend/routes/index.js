@@ -11,7 +11,7 @@ router.post("/register",function(req,res,next){
     res.send("Usuario Creado")
   })
   .catch((e)=>{
-    res.status(400).json({error: "Error Al registar el usuario", message:e.message})
+    res.status(400).json({error: "Nombre de usuario ya utilizado", message:e.message})
   })
 })
 
